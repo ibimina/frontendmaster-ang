@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { Language } from '../common/model/language';
 
-
 const lang: Language = {
   id: null,
   title: "",
@@ -10,8 +9,8 @@ const lang: Language = {
 }
 @Component({
   selector: 'app-home',
-  templateUrl: './Home.component.html',
-  styleUrls: ['./Home.component.css']
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   selectedLanguage = lang;
@@ -25,7 +24,6 @@ export class HomeComponent {
     { id: 7, title: 'Ruby', description: 'Ruby is a programming language', favourite: false },
 
   ]
-
   selectLanguage(language: Language) {
     this.selectedLanguage = language;
   }
