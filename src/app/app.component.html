@@ -6,6 +6,7 @@
     <ul>
       <li *ngFor="let language of languages" (click)="selectLanguage(language)">
         <p>Language: {{language.title}}</p>
+        <button class="delete" (click)="deleteLanguage(language.id);$event.stopImmediatePropagation()">delete</button>
       </li>
     </ul>
   </div>
