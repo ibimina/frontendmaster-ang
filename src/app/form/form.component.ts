@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-
+  formValue = {
+    name: "",
+    email: "",
+    password: "",
+  }
 }
