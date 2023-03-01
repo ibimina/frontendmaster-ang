@@ -1,10 +1,23 @@
-<p>{{title }}</p>
-<ul>
-  <li *ngFor="let language of languages">
-<p>Language: {{language.title}}</p>
-<p>Title: {{language.description}}</p>
-  </li>
-</ul>
+<h1>{{title }}</h1>
+<main>
+  <div class="language_wrapper">
+    <h2>Language List</h2>
+    <p>Click on a language to see details</p>
+    <ul>
+      <li *ngFor="let language of languages" (click)="selectLanguage(language)">
+        <p>Language: {{language.title}}</p>
+      </li>
+    </ul>
+  </div>
+
+  <div class="selcted_lang">
+    <h2>Selected language</h2>
+    <p>You selected</p>
+    <p class="select">{{selectedLanguage | json}}</p>
+  </div>
+</main>
+
+
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
