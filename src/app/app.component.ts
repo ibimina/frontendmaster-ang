@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { Language } from './common/model/language';
 
-interface Language {
-  id: number;
-  title: string;
-  description: string;
+
+const  lang: Language = {
+  id:null,
+  title:"",
+  description:"",
+  favourite:false
 }
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -15,7 +17,7 @@ interface Language {
 export class AppComponent {
 
   title = 'Frontendmaster-ang';
-  selectedLanguage: Language | null = null;
+  selectedLanguage = lang;
   languages = [
     { id: 1, title: 'C#', description: 'C# is a programming language', favourite: false },
     { id: 2, title: 'Java', description: 'Java is a programming language', favourite: false },
