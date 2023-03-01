@@ -1,12 +1,21 @@
 import { Component } from '@angular/core';
 
+interface Language {
+  id: number;
+  title: string;
+  description: string;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
-  title = 'frontendmaster-ang';
+
+  title = 'Frontendmaster-ang';
+  selectedLanguage:Language| null = null;
   languages = [
     {id:1,title:'C#',description:'C# is a programming language',favourite:false},
     {id:2,title:'Java',description:'Java is a programming language',favourite:false},
@@ -17,4 +26,8 @@ export class AppComponent {
     {id:7,title:'Ruby',description:'Ruby is a programming language',favourite:false},
     
   ]
+
+  selectLanguage(language  : Language){
+    this.selectedLanguage = language;
+  }
 }
