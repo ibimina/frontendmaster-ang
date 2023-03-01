@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+}
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 1em;
+}
+ul {
+  padding: 0;
+}
+li {
+  cursor: pointer;
+  list-style: none;
+  padding: 0.1em 0.5em;
+  border-radius: 8px;
+}
+li:hover {
+  background-color: #ccc;
+}
+.select{
+    padding: 0.1em 0.5em;
+}
