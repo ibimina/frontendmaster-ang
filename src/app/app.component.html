@@ -1,22 +1,4 @@
 <h1>{{title }}</h1>
-<main>
-  <div class="language_wrapper">
-    <h2>Language List</h2>
-    <p>Click on a language to see details</p>
-    <ul>
-      <li *ngFor="let language of languages" (click)="selectLanguage(language)">
-        <p>Language: {{language.title}}</p>
-        <button class="delete" (click)="deleteLanguage(language.id);$event.stopImmediatePropagation()">delete</button>
-      </li>
-    </ul>
-  </div>
-
-  <div class="selcted_lang">
-    <h2>Selected language</h2>
-    <p>You selected</p>
-    <p class="select">{{selectedLanguage | json}}</p>
-  </div>
-</main>
 
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
