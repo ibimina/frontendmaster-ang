@@ -1,6 +1,10 @@
-<p>Welcome</p>
-<p>{{languages | json}}</p>
-
+<p>{{title }}</p>
+<ul>
+  <li *ngFor="let language of languages">
+<p>Language: {{language.title}}</p>
+<p>Title: {{language.description}}</p>
+  </li>
+</ul>
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
 <!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
