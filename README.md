@@ -1,3 +1,29 @@
+## Angular Cli
+The Angular CLI is a command-line interface tool that you use to initialize, develop, scaffold, and maintain Angular applications directly from a command shell.
+
+## Installing the Angular CLI
+To install the Angular CLI, open a terminal window. Run the following command to install the CLI using npm:
+
+    npm install -g @angular/cli
+
+## Creating a New Project
+To create a new project, open a terminal window. Run the following command to create a new project named `my-app`:
+
+    ng new my-app
+
+The Angular CLI prompts you for information about features to include in the initial app project. Accept the defaults by pressing the Enter or Return key.
+
+The Angular CLI creates the `my-app` folder and generates the initial project structure.
+
+## Running the Application
+To run the application, go to the project directory and use the Angular CLI `serve` command to build and serve the app, using `webpack-dev-server` under the covers. The following example builds and serves the app, using port 4200:
+
+    cd my-app
+    ng serve --open
+
+The Angular CLI automatically opens your browser to `http://localhost:4200/`.
+
+
 ## Angular Services
 Angular services are used to share data between components. They are also used to make HTTP requests to a server. Services are created using the Angular CLI. The Angular CLI creates a service file and a spec file. The spec file is used for testing
 
