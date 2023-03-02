@@ -11,9 +11,17 @@
         </ul>
     </div>
 
-    <div class="selcted_lang">
+    <div class="selected_lang">
         <h2>Selected language</h2>
         <p>You selected</p>
-        <p class="select">{{selectedLanguage | json}}</p>
+        <form #form="ngForm">
+            <input type="text" name="title" [(ngModel)]="selectedLanguage.title" required>
+            <input type="text" name="description" [(ngModel)]="selectedLanguage.description" required>
+            <input type="checkbox" name="favourite" [(ngModel)]="selectedLanguage.favourite" required>
+            <input type="submit" value="Submit" required class="submit">
+        </form>
+        <pre>{{form.value | json}}</pre>
+        <pre>{{form.valid}}</pre>
     </div>
+
 </main>
