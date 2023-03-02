@@ -14,6 +14,7 @@ const lang: Language = {
 })
 export class HomeComponent {
   selectedLanguage = lang;
+ 
   languages = [
     { id: 1, title: 'C#', description: 'C# is a programming language', favourite: false },
     { id: 2, title: 'Java', description: 'Java is a programming language', favourite: false },
@@ -25,7 +26,8 @@ export class HomeComponent {
 
   ]
   selectLanguage(language: Language) {
-    this.selectedLanguage = language;
+    //spread operator to copy the object and avoid shared mutable state
+    this.selectedLanguage = {...language};
   }
   deleteLanguage(languageId: number) {
     this.languages = this.languages.filter(language => language.id !== languageId);
