@@ -1,27 +1,57 @@
-# FrontendmasterAng
+## Angular Services
+Angular services are used to share data between components. They are also used to make HTTP requests to a server. Services are created using the Angular CLI. The Angular CLI creates a service file and a spec file. The spec file is used for testing
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+## Creating a Service
+To create a service, use the Angular CLI. The Angular CLI creates a service file and a spec file. The spec file is used for testing. The following command creates a service named `data`:
 
-## Development server
+    ng generate service data
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The Angular CLI creates the following files: 
+        src/app/data.service.ts
+        src/app/data.service.spec.ts
 
-## Code scaffolding
+## Structure of a Service
+A service is a TypeScript class. The following example shows the structure of a service:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    import { Injectable } from '@angular/core';
 
-## Build
+    @Injectable({
+      providedIn: 'root'
+    })
+    export class DataService {
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+      constructor() { }
+      data : Data[] = [
+        {
+          name: 'John',
+          age: 30
+        },
+        {
+          name: 'Doe',
+          age: 25
+        }
+      ];
+    }
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Importing the Service
+To use the service, import the service into the component. The following example imports the `DataService` service into the `AppComponent` component:
 
-## Running end-to-end tests
+    import { DataService } from './data.service';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Injecting the Service
+To inject the service into the component, add the service to the constructor of the component. The following example adds the `DataService` service to the constructor of the `AppComponent` component:
 
-## Further help
+    constructor(private data: DataService) { }
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Calling the Service
+To call the service, add the method to an event handler. The following example adds the `getInfo()` method to the `ngOnInit()` event handler:
+
+    ngOnInit() {
+      this.info = this.data.data;
+    }
+
+## Outputting the Service
+To output the service, add the service to the template. The following example outputs the `info` property of the `AppComponent` component:
+
+    <p>{{info}}</p>
