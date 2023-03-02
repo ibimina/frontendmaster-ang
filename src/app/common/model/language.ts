@@ -1,5 +1,5 @@
 export interface Language {
-    id: number|null;
+    id: string;
     title: string;
     description: string;
     favourite: boolean;
