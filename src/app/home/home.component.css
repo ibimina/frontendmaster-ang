@@ -31,3 +31,25 @@ li:hover {
   background-color: black;
   color: #fff;
 }
+.selected_lang{
+background-color: #ccc;
+padding: 1em;
+}
+input{
+    display: block;
+    width: 60%;
+    margin: 0em auto 1em auto;
+    padding: 0.5em;
+    border: none;
+    border-radius: 8px;
+}
+form{
+    padding: 1em;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: auto;
+}
+.submit{
+    width: 40%;
+    background-color: palevioletred;
+}
