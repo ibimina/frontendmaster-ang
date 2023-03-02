@@ -1,35 +1,27 @@
 import { Component } from '@angular/core';
 import { Language } from '../common/model/language';
+import { CourseService } from '../common/service/course.service';
 
-const lang: Language = {
-  id: null,
-  title: "",
-  description: "",
-  favourite: false
-}
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  selectedLanguage = lang;
- 
-  languages = [
-    { id: 1, title: 'C#', description: 'C# is a programming language', favourite: false },
-    { id: 2, title: 'Java', description: 'Java is a programming language', favourite: false },
-    { id: 3, title: 'Python', description: 'Python is a programming language', favourite: false },
-    { id: 4, title: 'JavaScript', description: 'JavaScript is a programming language', favourite: false },
-    { id: 5, title: 'C++', description: 'C++ is a programming language', favourite: false },
-    { id: 6, title: 'C', description: 'C is a programming language', favourite: false },
-    { id: 7, title: 'Ruby', description: 'Ruby is a programming language', favourite: false },
 
-  ]
+
+  selectedLanguage = {} as Language;
+ 
+  languages:Language[] = []
+  constructor(private languageService:CourseService) { }
+  ngOnInit(): void {
+    this.languages = this.languageService.courses;
+  }
   selectLanguage(language: Language) {
     //spread operator to copy the object and avoid shared mutable state
     this.selectedLanguage = {...language};
   }
-  deleteLanguage(languageId: number) {
+  deleteLanguage(languageId: string) {
     this.languages = this.languages.filter(language => language.id !== languageId);
   }
 }
