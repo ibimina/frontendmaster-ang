@@ -23,7 +23,28 @@ To run the application, go to the project directory and use the Angular CLI `ser
 
 The Angular CLI automatically opens your browser to `http://localhost:4200/`.
 
+## Creating a New Component
+To create a new component, open a terminal window. Run the following command to create a new component named `my-new-component`:
 
+    ng generate component my-new-component
+
+## Iterating Through an Array
+To iterate through an array, use the `*ngFor` directive. The following example iterates through the `info` array and outputs the `name` property of each item in the array:
+
+    <ul>
+      <li *ngFor="let item of info">{{item.name}}</li>
+    </ul>
+
+## conditionally displaying data
+
+    <div *ngIf="info.length > 3">There are more than 3 items</div>
+
+## Template Driven Forms
+    Template-driven forms use directives in the component template to collect user input. 
+    To create a template-driven form, add the `ngModel` directive to the form elements. The following example adds the `ngModel` directive to the `input` element:
+
+        <input type="text" name="name" [(ngModel)]="name">
+    
 ## Angular Services
 Angular services are used to share data between components. They are also used to make HTTP requests to a server. Services are created using the Angular CLI. The Angular CLI creates a service file and a spec file. The spec file is used for testing
 
